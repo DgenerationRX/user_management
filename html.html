@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('wave.jpg');
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 50px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header h1 {
+            color: #FFF8DC;
+            text-align: center;
+            text-decoration-line: underline;
+        }
+        .main {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .main h2 {
+            margin-bottom: 20px;
+        }
+        .main a {
+            padding: 10px 20px;
+            background-color: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .main a:hover {
+            background-color: #e8491d;
+        }
+        footer {
+            background-color: transparent;
+            color: #000000;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .datetime {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 14px;
+            background-color: #c0c0c0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome To Student Management System</h1>
+        </div>
+    </header>
+    <div class="container main">
+        <h2>Choose an Action</h2>
+        <a href="main.php">Manage Users</a>
+    </div>
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2024. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <div class="datetime" id="datetime"></div>
+
+    <script>
+        function displayDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+            const formattedDate = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').textContent = formattedDate;
+        }
+
+        setInterval(displayDateTime, 1000);
+        displayDateTime();
+    </script>
+</body>
+</html>
